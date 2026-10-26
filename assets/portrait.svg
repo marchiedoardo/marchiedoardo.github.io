@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 550">
+<rect width="440" height="550" fill="#e2e5ea"/>
+<text x="220" y="285" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" fill="#5d6676">Your photo</text>
+<text x="220" y="320" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#5d6676">4 : 5, e.g. 880 × 1100 px</text>
+</svg>

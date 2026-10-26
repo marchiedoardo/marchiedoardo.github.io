@@ -1,0 +1,296 @@
+/* ==========================================================================
+   Personal academic site — single stylesheet
+   No external fonts, scripts or trackers: the site makes zero third-party
+   requests. Edit the tokens in :root to change colours and fonts.
+   ========================================================================== */
+
+:root {
+  --bg: #ffffff;
+  --ink: #1b2130;          /* body text */
+  --muted: #5d6676;        /* secondary text, dates */
+  --rule: #e2e5ea;         /* hairlines */
+  --accent: #a3222b;       /* links; Hi-C "Reds" end of the colour map */
+  --accent-soft: #f6e3e2;  /* highlight behind your own name */
+  --cool: #2f5d8a;         /* second colour of the logo mark */
+
+  --serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, "Noto Serif", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --measure: 40rem;        /* text column width, about 70 characters */
+  --wide: 52rem;           /* page width including the margin column */
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15181e;
+    --ink: #e4e7ec;
+    --muted: #9aa3b2;
+    --rule: #2a2f38;
+    --accent: #f0837b;
+    --accent-soft: #3a2224;
+    --cool: #7fa8d4;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15181e;
+  --ink: #e4e7ec;
+  --muted: #9aa3b2;
+  --rule: #2a2f38;
+  --accent: #f0837b;
+  --accent-soft: #3a2224;
+  --cool: #7fa8d4;
+}
+
+/* ---------- Base ---------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.125rem;     /* 18 px */
+  line-height: 1.6;
+  font-feature-settings: "kern", "liga", "onum";
+}
+
+img, svg, video { max-width: 100%; height: auto; display: block; }
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+h1, h2, h3 { line-height: 1.2; font-weight: 600; }
+h1 { font-size: 2.4rem; margin: 0 0 0.4rem; letter-spacing: -0.01em; }
+h2 { font-size: 1.35rem; margin: 2.8rem 0 0.9rem; }
+h3 { font-size: 1.05rem; margin: 1.6rem 0 0.4rem; }
+p  { margin: 0 0 1rem; }
+
+.skip-link {
+  position: absolute; left: -999px; top: 0;
+  background: var(--bg); padding: 0.5rem 1rem;
+}
+.skip-link:focus { left: 1rem; }
+
+/* ---------- Layout ---------- */
+
+.wrap {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+main.wrap { padding-bottom: 4rem; }
+.prose { max-width: var(--measure); }
+
+/* ---------- Header ---------- */
+
+.site-header {
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 3rem;
+}
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+}
+.site-name {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+.site-name img { width: 22px; height: 22px; }
+
+.site-nav ul {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; gap: 1.4rem; flex-wrap: wrap;
+}
+.site-nav a {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+}
+.site-nav a:hover { color: var(--ink); }
+.site-nav a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- Home: intro ---------- */
+
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 11rem;
+  gap: 2.5rem;
+  align-items: start;
+}
+.intro .role {
+  font-family: var(--sans);
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.6rem;
+}
+.portrait {
+  width: 11rem;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 3px;
+  background: var(--rule);
+}
+.links {
+  list-style: none; padding: 0; margin: 1.4rem 0 0;
+  display: flex; flex-wrap: wrap; gap: 0.4rem 1.3rem;
+  font-family: var(--sans); font-size: 0.95rem;
+}
+
+/* ---------- Placeholder marker ----------
+   Every bracketed placeholder is wrapped in <span class="ph">.
+   Search the files for class="ph" to find what still needs filling in.
+   Delete this rule (or leave it) once nothing is left. */
+.ph {
+  background: var(--accent-soft);
+  border-radius: 2px;
+  padding: 0 0.15em;
+}
+
+/* ---------- Research ---------- */
+
+.figure { margin: 2rem 0; }
+.figure img { max-width: min(24rem, 100%); }
+.figure figcaption {
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-top: 0.6rem;
+  max-width: var(--measure);
+}
+.topic { margin-top: 2.6rem; max-width: var(--measure); }
+.topic h2 { margin-top: 0; }
+.topic + .topic { border-top: 1px solid var(--rule); padding-top: 2.4rem; }
+
+/* ---------- Dated lists (publications, CV) ----------
+   Year or date sits in a narrow left column; entries hang to its right. */
+
+.dated {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  column-gap: 1.5rem;
+  margin: 0;
+}
+.dated > dt {
+  font-family: var(--sans);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 0.9rem;
+  color: var(--muted);
+  padding-top: 0.2rem;
+}
+.dated > dd { margin: 0 0 1.3rem; max-width: var(--measure); }
+.dated .what { font-weight: 600; }
+.dated .where { color: var(--muted); }
+
+/* ---------- Publications ---------- */
+
+.pubs { list-style: none; padding: 0; margin: 0; }
+.pubs li { margin-bottom: 1.2rem; }
+.pub-title { font-weight: 600; }
+.pub-authors, .pub-venue { display: block; }
+.pub-authors { color: var(--ink); }
+.pub-venue { color: var(--muted); font-style: italic; }
+.pub-links {
+  display: inline-flex; gap: 0.9rem;
+  font-family: var(--sans); font-size: 0.85rem;
+  margin-top: 0.15rem;
+}
+.me {
+  background: var(--accent-soft);
+  border-radius: 2px;
+  padding: 0 0.15em;
+  font-weight: 600;
+}
+.tag {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-style: normal;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 0.05rem 0.35rem;
+  margin-left: 0.35rem;
+  vertical-align: 0.1em;
+}
+.note {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* ---------- Buttons ---------- */
+
+.button {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  text-decoration: none;
+}
+.button:hover { background: var(--accent-soft); }
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.site-footer .wrap {
+  display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  padding-top: 1.4rem; padding-bottom: 2rem;
+}
+.site-footer a { color: var(--muted); }
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 640px) {
+  body { font-size: 1.0625rem; }
+  h1 { font-size: 1.9rem; }
+  .site-header { margin-bottom: 2rem; }
+  .intro { grid-template-columns: 1fr; gap: 1.5rem; }
+  .intro .portrait { order: -1; width: 8rem; }
+  .dated { grid-template-columns: 1fr; }
+  .dated > dt { padding-top: 0; }
+  .dated > dd { margin-bottom: 1.4rem; }
+}
+
+/* ---------- Print (a clean CV page if someone prints it) ---------- */
+
+@media print {
+  .site-nav, .site-footer, .skip-link, .button { display: none; }
+  .site-header { border: 0; margin-bottom: 1rem; }
+  a { color: inherit; text-decoration: none; }
+  .ph, .me { background: none; }
+}
