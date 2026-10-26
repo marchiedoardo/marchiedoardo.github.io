@@ -43,7 +43,7 @@ from pathlib import Path
 
 # How your name appears in author lists, as (surname, first initial).
 # Add one tuple per spelling you have published under.
-MY_NAMES = [("Name", "Y")]
+MY_NAMES = [("Marchi", "E")]
 
 # Number of entries shown under "Recent publications" on the home page.
 RECENT_COUNT = 3
