@@ -150,8 +150,9 @@ main.wrap { padding-bottom: 4rem; }
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.5;
-  margin-bottom: 1.6rem;
+  margin-bottom: 0.7rem;
 }
+
 .portrait {
   width: 11rem;
   aspect-ratio: 4 / 5;
@@ -160,7 +161,7 @@ main.wrap { padding-bottom: 4rem; }
   background: var(--rule);
 }
 .links {
-  list-style: none; padding: 0; margin: 1.4rem 0 0;
+  list-style: none; padding: 0; margin: 0 0 1.8rem;
   display: flex; flex-wrap: wrap; gap: 0.4rem 1.3rem;
   font-family: var(--sans); font-size: 0.95rem;
 }
@@ -178,7 +179,8 @@ main.wrap { padding-bottom: 4rem; }
 /* ---------- Research ---------- */
 
 .figure { margin: 2rem 0; }
-.figure img { max-width: min(24rem, 100%); }
+.figure img { max-width: 100%; }
+.figure.small img { max-width: 24rem; }
 .figure figcaption {
   font-family: var(--sans);
   font-size: 0.875rem;

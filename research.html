@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Research · Your Name</title>
-  <meta name="description" content="Research of Your Name: projects, methods and figures.">
+  <title>Research · Edoardo Marchi</title>
+  <meta name="description" content="Research of Edoardo Marchi: polymer models of chromatin, chromosome dynamics, and data-driven projects in soil ecology and disease phenotypes.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -15,7 +15,7 @@
     <div class="wrap">
       <a class="site-name" href="index.html">
         <img src="assets/favicon.svg" alt="" width="22" height="22">
-        <span class="ph">Your Name</span>
+        Edoardo Marchi
       </a>
       <nav class="site-nav" aria-label="Main">
         <ul>
@@ -32,50 +32,90 @@
     <div class="prose">
       <h1>Research</h1>
       <p>
-        <span class="ph">Overview paragraph (3–5 sentences). State the big question, the
-        approach you take, and what is distinctive about it. This is the paragraph a
-        hiring committee reads.</span>
+        Chromosomes are very long polymers that must fit inside the small volume of the nucleus. While tightly packed, they must still carry out all their complex functions, such as transcription and gene regulation. For this reason, the 3D folding of chromatin is only apparently random: it is shaped by many factors, such as molecular motors, the chemical state of chromatin, and the physics of the polymer itself.
+        I use coarse-grained polymer models, statistical mechanics and stochastic processes to understand the physical mechanisms that produce the structures and the dynamics that we measure in experiments. I compare these models directly with experimental data such as Hi-C contact maps and microscopy measurements.
       </p>
     </div>
 
     <section class="topic">
       <div class="prose">
-        <h2><span class="ph">Project or theme 1</span></h2>
+        <h2>From epigenetic marks to the 3-D structure</h2>
         <p>
-          <span class="ph">What the problem is, what you did, and what you found.
-          Keep it to one paragraph. Link the paper at the end.</span>
+          In the <em>Drosophila</em> genome, chromatin loci separate into A and B compartments, corresponding to active and inactive regions. I study how histone acetylation controls this phase separation by simulating the <em>Drosophila</em> chromosomes with a polymer model in which the interactions between monomers are set by experimentally measured acetylation levels. The simulated contact maps are compared with Hi-C data from different genetic conditions and developmental stages.
+        </p>
+        <p>
+          As a next step, I want to use profiles of several epigenetic marks - including histone acetylation and methylation - to
+          predict from epigenomic data alone both the 3D structure of the genome and the effects of epigenetic perturbations on it.
         </p>
       </div>
       <figure class="figure">
-        <img src="assets/figure-placeholder.svg" alt="[Describe what the figure shows]" width="480" height="480">
-        <figcaption><span class="ph">Figure caption. Say what is plotted and the one thing the reader should notice.</span></figcaption>
+        <img src="assets/drosophila_for_site.svg" alt="[Describe what the figure shows]" width="800" height="800">
+        <figcaption>(a) Schematics of the Drosophila full-genome model. (b) Comparison of simulated and experimental contact map (chromosome 2L, 10500000-15500000 bp)"</figcaption>
       </figure>
-      <p class="note">Related: <a href="publications.html"><span class="ph">Paper short title, Journal Year</span></a></p>
+      <p class="note">Manuscript in preparation.</p>
     </section>
 
     <section class="topic">
       <div class="prose">
-        <h2><span class="ph">Project or theme 2</span></h2>
+        <h2>Dynamics of chromatin contacts</h2>
         <p>
-          <span class="ph">Same structure as above. A current or upcoming project can go here
-          without results, framed as the question you are working on.</span>
+          Hi-C maps are averages of many fixed cells. They show how often two loci are in contact, but lack information about how fast these contacts form and break. The dynamics of chromatin loci, however, is relevant to many processes, such as the encounters between enhancers and promoters. During my PhD, I studied this dynamics with simple polymer models, which I treated both analytically and with molecular dynamics simulations.
+        </p>
+        <p>
+          In mammalians, loop extrusion is widely accepted as one of the main mechanisms that create contacts between loci far apart along the chain and, ultimately, Topologically Associating Domains (TADs). I showed that these non-local contacts lower the subdiffusion exponent of loci below the Rouse value of 0.5. I also showed that this anomalous exponent is due mainly to the static presence of loops, and not to the actual active process that creates them.
+        </p>
+        <p>
+          I also studied how long a contact between two monomers lasts. For the end
+          monomers of a chain, the mean residence time of a contact scales with chain
+          length as a power law with exponent −1. The residence time becomes independent
+          of length only for strong, short-range interactions. This result matters for
+          the interpretation of microscopy experiments, where the contact distance is
+          often not known.
+        </p>
+        <p>
+          In a collaboration with experimental groups, we combined live-cell imaging
+          of chromosomal loci in mouse embryonic stem cells with polymer simulations.
+          We showed that chromosome folding inside a topologically associating domain
+          is highly dynamic, and that cohesin and CTCF control this dynamics.
         </p>
       </div>
+      <p class="note">
+        Related:
+        <a href="https://doi.org/10.1103/physreve.107.064406">Phys. Rev. E 2023</a>,
+        <a href="https://doi.org/10.1103/physreve.111.015401">Phys. Rev. E 2025</a>,
+        <a href="https://doi.org/10.1038/s41588-022-01232-7">Nature Genetics 2022</a>
+      </p>
     </section>
 
-    <section class="topic prose">
-      <h2>Methods and tools</h2>
-      <p>
-        <span class="ph">Optional. A short list of the methods and software you use or develop,
-        with links to code repositories.</span>
+    <section class="topic">
+      <div class="prose">
+        <h2>Data-driven projects beyond chromatin</h2>
+        <p>
+          After my PhD, I applied network and statistical methods to other
+          problems. In soil ecology, I analysed how land use, seasonality and agricultural
+          management change the diversity and the co-occurrence networks of soil
+          microbial and fungal communities.
+        </p>
+        <p>
+          In a study of Minamata disease, a neurological disorder caused by
+          methylmercury poisoning in 1950s Japan, I mapped the symptoms of 269 patients
+          to the Human Phenotype Ontology. Using network-based and computational similarity measures, I then compared this phenotypic profile with
+          more than 12,000 diseases. The analysis places Minamata disease close to
+          movement and neurodegenerative disorders.
+        </p>
+      </div>
+      <p class="note">
+        Related:
+        <a href="https://doi.org/10.1371/journal.pone.0342655">PLOS One 2026</a>,
+        <a href="https://doi.org/10.1016/j.scitotenv.2026.181545">Sci. Total Environ. 2026</a>,
+        <a href="https://doi.org/10.12688/openreseurope.22066.4">Open Res. Europe 2026</a>
       </p>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
-      <span>© <span class="ph">2026 Your Name</span></span>
-      <span>No cookies, no tracking.</span>
+      <span>© 2026 Edoardo Marchi</span>
     </div>
   </footer>
 </body>
